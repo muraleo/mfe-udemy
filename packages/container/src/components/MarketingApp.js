@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 
 export default () => {
   const ref = useRef(null);
-  const history = useHistory()
+  const history = useHistory();
 
   useEffect(() => {
     const { onParentNavigate } = mount(ref.current, {
@@ -18,7 +18,7 @@ export default () => {
       },
     });
 
-    history.listen(onParentNavigate)
+    history.listen(onParentNavigate);
   }, []);
 
   return <div ref={ref} />;
