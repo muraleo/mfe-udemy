@@ -13,6 +13,7 @@ const AuthLazy = lazy(() => import("./components/AuthApp"));
 const FormLazy = lazy(() => import("./components/FormApp"));
 const SearchLazy = lazy(() => import('./components/SearchApp'));
 const PitchboardLazy = lazy(() => import("./components/PitchboardApp"));
+const ExpertLazy = lazy(() => import('./components/ExpertApp'));
 
 const generateClassName = createGenerateClassName({
   productionPrefix: "co",
@@ -37,6 +38,7 @@ export default () => {
               <Route path="/form" component={FormLazy} />
               <Route path="/search" component={SearchLazy} />
               <Route path="/pitchboard" component={PitchboardLazy} />
+              <Route path="/expert" component={ExpertLazy} />
               <Route path="/" component={MarketingLazy} />
             </Switch>
           </Suspense>

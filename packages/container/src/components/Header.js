@@ -25,8 +25,8 @@ const navItems = [
     url: "/pitchboard"
   },
   {
-    text: "Link Three",
-    url: "/link-three",
+    text: 'expert',
+    url: '/expert',
   },
   {
     text: "Form",
