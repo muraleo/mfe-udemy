@@ -11,7 +11,7 @@ const prodConfig = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: 'Pitchboard',
+      name: 'pitchboard',
       filename: 'remoteEntry.js',
       exposes: {
         './PitchboardApp': './src/bootstrap',
