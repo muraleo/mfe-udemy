@@ -21,7 +21,6 @@ const prodConfig = {
         search: `search@${domain}/search/latest/remoteEntry.js`,
         pitchboard: `pitchboard@${domain}/pitchboard/latest/remoteEntry.js`,
         expert: `expert@${domain}/expert/latest/remoteEntry.js`,
-
       },
       shared: packageJson.dependencies,
     }),
