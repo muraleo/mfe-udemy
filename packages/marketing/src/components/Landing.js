@@ -3,12 +3,12 @@ import Button from '@material-ui/core/Button';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import MaterialLink from '@material-ui/core/Link';
+import { Create, Search, ListAlt, Person, Link as LinkIcon } from '@material-ui/icons';
 import { Link } from 'react-router-dom';
 
 function Copyright() {
@@ -16,7 +16,7 @@ function Copyright() {
     <Typography variant="body2" color="textSecondary" align="center">
       {'Copyright © '}
       <MaterialLink component={Link} to="/" color="inherit">
-        Your Website
+        MFE Hackathon Team
       </MaterialLink>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -52,6 +52,9 @@ const useStyles = makeStyles((theme) => ({
   cardMedia: {
     paddingTop: '56.25%', // 16:9
   },
+  cardIcon: {
+    marginBototm: '10px',
+  },
   cardContent: {
     flexGrow: 1,
   },
@@ -61,7 +64,39 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+// TODO: Is there a better way to share these links
+// or maintain a centralized way to reference them?
+const cards = [
+  {
+    text: "Form",
+    url: "/form",
+    description: "Project Delivery team owns this app",
+    iconComponent: Create
+  },
+  {
+    text: "Pitchboard",
+    url: "/pitchboard",
+    description: "Integrated services owns this app",
+    iconComponent: ListAlt
+  },
+  {
+    text: "Search",
+    url: "/search",
+    description: "Search team owns this app",
+    iconComponent: Search
+  },
+  {
+    text: 'Expert',
+    url: '/expert',
+    description: "You guessed it... Expert team owns this app",
+    iconComponent: Person
+  },
+  {
+    text: 'Pricing',
+    url: '/pricing',
+    description: "A demo page that is part of the same app as the current (home) page"
+  },
+];
 
 export default function Album() {
   const classes = useStyles();
@@ -79,7 +114,7 @@ export default function Album() {
               color="textPrimary"
               gutterBottom
             >
-              Home Page
+              Dashboard
             </Typography>
             <Typography
               variant="h5"
@@ -87,57 +122,33 @@ export default function Album() {
               color="textSecondary"
               paragraph
             >
-              Something short and leading about the collection below—its
-              contents, the creator, etc. Make it short and sweet, but not too
-              short so folks don&apos;t simply skip over it entirely.
+              Check out our different pages below.<br/>Each is a standalone app!
             </Typography>
-            <div className={classes.heroButtons}>
-              <Grid container spacing={2} justify="center">
-                <Grid item>
-                  <Link to="/pricing">
-                    <Button variant="contained" color="primary">
-                      Pricing
-                    </Button>
-                  </Link>
-                </Grid>
-                <Grid item>
-                  <Link to="/pricing">
-                    <Button variant="outlined" color="primary">
-                      Pricing
-                    </Button>
-                  </Link>
-                </Grid>
-              </Grid>
-            </div>
           </Container>
         </div>
         <Container className={classes.cardGrid} maxWidth="md">
           {/* End hero unit */}
           <Grid container spacing={4}>
             {cards.map((card) => (
-              <Grid item key={card} xs={12} sm={6} md={4}>
+              <Grid item key={card.url} xs={12} sm={6} md={4}>
                 <Card className={classes.card}>
-                  <CardMedia
-                    className={classes.cardMedia}
-                    image="https://source.unsplash.com/random"
-                    title="Image title"
-                  />
                   <CardContent className={classes.cardContent}>
+                    <div className={classes.cardIcon}>
+                      {card.iconComponent ? <card.iconComponent className={classes.cardIcon} /> : <LinkIcon />}
+                    </div>
                     <Typography gutterBottom variant="h5" component="h2">
-                      Heading
+                      {card.text}
                     </Typography>
                     <Typography>
-                      This is a media card. You can use this section to describe
-                      the content!
+                      {card.description}
                     </Typography>
                   </CardContent>
                   <CardActions>
-                    <Button size="small" color="primary">
-                      View
-                    </Button>
-                    <Button size="small" color="primary">
-                      Edit
-                    </Button>
+                    <Link to={card.url}>
+                      <Button size="small" color="primary">
+                        View
+                      </Button>
+                    </Link>
                   </CardActions>
                 </Card>
               </Grid>
@@ -147,17 +158,6 @@ export default function Album() {
       </main>
       {/* Footer */}
       <footer className={classes.footer}>
-        <Typography variant="h6" align="center" gutterBottom>
-          Footer
-        </Typography>
-        <Typography
-          variant="subtitle1"
-          align="center"
-          color="textSecondary"
-          component="p"
-        >
-          Something here to give the footer a purpose!
-        </Typography>
         <Copyright />
       </footer>
       {/* End footer */}

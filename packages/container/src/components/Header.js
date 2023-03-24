@@ -13,19 +13,11 @@ const navItems = [
     url: "/",
   },
   {
-    text: "Pricing",
-    url: "/pricing",
-  },
-  {
-    text: "Link One",
-    url: "/link-one",
-  },
-  {
     text: "Pitchboard",
     url: "/pitchboard"
   },
   {
-    text: 'expert',
+    text: 'Expert',
     url: '/expert',
   },
   {
@@ -33,7 +25,7 @@ const navItems = [
     url: "/form",
   },
   {
-    text: "search",
+    text: "Search",
     url: "/search",
   },
 ];
