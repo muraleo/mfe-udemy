@@ -32,6 +32,10 @@ const navItems = [
     text: "Form",
     url: "/form",
   },
+  {
+    text: "search",
+    url: "/search",
+  },
 ];
 
 const useStyles = makeStyles((theme) => ({
