@@ -36,7 +36,7 @@ export default () => {
               </Route>
               <Route path="/form" component={FormLazy} />
               <Route path="/search" component={SearchLazy} />
-              <Route exact path="/pitchboard" component={PitchboardLazy} />
+              <Route path="/pitchboard" component={PitchboardLazy} />
               <Route path="/" component={MarketingLazy} />
             </Switch>
           </Suspense>
