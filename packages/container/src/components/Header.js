@@ -10,24 +10,24 @@ import { Link as RouterLink } from 'react-router-dom';
 const navItems = [
   {
     text: 'Home',
-    url: '/'
+    url: '/',
   },
   {
     text: 'Pricing',
-    url: '/pricing'
+    url: '/pricing',
   },
   {
     text: 'Link One',
-    url: '/link-one'
+    url: '/link-one',
   },
   {
     text: 'Link Two',
-    url: '/link-two'
+    url: '/link-two',
   },
   {
-    text: 'Link Three',
-    url: '/link-three'
-  }
+    text: 'expert',
+    url: '/expert',
+  },
 ];
 
 const useStyles = makeStyles((theme) => ({
@@ -50,10 +50,10 @@ const useStyles = makeStyles((theme) => ({
   },
   linkBox: {
     display: 'flex',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   menu: {
-    marginLeft: '20px'
+    marginLeft: '20px',
   },
   link: {
     margin: theme.spacing(1, 1.5),
@@ -115,11 +115,7 @@ export default function Header({ isSignedIn, onSignOut }) {
             </Typography>
             <Box className={classes.menu}>
               {navItems.map((item) => (
-                <Button
-                  component={RouterLink}
-                  to={item.url}
-                  key={item.url}
-                >
+                <Button component={RouterLink} to={item.url} key={item.url}>
                   {item.text}
                 </Button>
               ))}

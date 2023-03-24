@@ -10,6 +10,7 @@ import Header from './components/Header';
 
 const MarketingLazy = lazy(() => import('./components/MarketingApp'));
 const AuthLazy = lazy(() => import('./components/AuthApp'));
+const ExpertLazy = lazy(() => import('./components/ExpertApp'));
 
 const generateClassName = createGenerateClassName({
   productionPrefix: 'co',
@@ -31,6 +32,7 @@ export default () => {
               <Route path="/auth">
                 <AuthLazy onSignIn={() => setIsSignedIn(true)} />
               </Route>
+              <Route path="/expert" component={ExpertLazy} />
               <Route path="/" component={MarketingLazy} />
             </Switch>
           </Suspense>
