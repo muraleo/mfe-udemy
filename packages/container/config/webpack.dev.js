@@ -22,6 +22,7 @@ const devConfig = {
         auth: "auth@http://localhost:8082/remoteEntry.js",
         form: "form@http://localhost:8086/remoteEntry.js",
         search: "search@http://localhost:8089/remoteEntry.js",
+        pitchboard: 'pitchboard@//localhost:8088/remoteEntry.js',
       },
       shared: packageJson.dependencies,
     }),

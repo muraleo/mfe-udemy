@@ -21,8 +21,8 @@ const navItems = [
     url: "/link-one",
   },
   {
-    text: "Link Two",
-    url: "/link-two",
+    text: "Pitchboard",
+    url: "/pitchboard"
   },
   {
     text: "Link Three",
