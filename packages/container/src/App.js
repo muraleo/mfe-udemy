@@ -15,7 +15,6 @@ const SearchLazy = lazy(() => import('./components/SearchApp'));
 const PitchboardLazy = lazy(() => import("./components/PitchboardApp"));
 const ExpertLazy = lazy(() => import('./components/ExpertApp'));
 
-
 const generateClassName = createGenerateClassName({
   productionPrefix: "co",
 });
