@@ -6,7 +6,7 @@ import {
 } from '@material-ui/core/styles';
 
 const generateClassName = createGenerateClassName({
-  productionPrefix: 'ma',
+  productionPrefix: '_search',
 });
 
 export default ({ history }) => {
