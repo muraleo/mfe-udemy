@@ -21,6 +21,7 @@ const devConfig = {
         marketing: 'marketing@http://localhost:8081/remoteEntry.js',
         auth: 'auth@http://localhost:8082/remoteEntry.js',
         search: 'search@http://localhost:8089/remoteEntry.js',
+        pitchboard: 'pitchboard@//localhost:8088/remoteEntry.js'
       },
       shared: packageJson.dependencies,
     }),

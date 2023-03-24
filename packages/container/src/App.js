@@ -11,6 +11,7 @@ import Header from './components/Header';
 const MarketingLazy = lazy(() => import('./components/MarketingApp'));
 const AuthLazy = lazy(() => import('./components/AuthApp'));
 const SearchLazy = lazy(() => import('./components/SearchApp'));
+const PitchboardLazy = lazy(() => import('./components/PitchboardApp'));
 
 const generateClassName = createGenerateClassName({
   productionPrefix: 'co',
@@ -33,6 +34,7 @@ export default () => {
                 <AuthLazy onSignIn={() => setIsSignedIn(true)} />
               </Route>
               <Route exact path="/search" component={SearchLazy} />
+              <Route exact path="/pitchboard" component={PitchboardLazy} />
               <Route path="/" component={MarketingLazy} />
             </Switch>
           </Suspense>
