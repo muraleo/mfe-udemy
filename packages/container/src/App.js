@@ -1,19 +1,20 @@
-import React, { lazy, Suspense, useState } from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import React, { lazy, Suspense, useState } from "react";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import {
   StylesProvider,
   createGenerateClassName,
-} from '@material-ui/core/styles';
+} from "@material-ui/core/styles";
 
-import Progress from './components/Progress';
-import Header from './components/Header';
+import Progress from "./components/Progress";
+import Header from "./components/Header";
 
-const MarketingLazy = lazy(() => import('./components/MarketingApp'));
-const AuthLazy = lazy(() => import('./components/AuthApp'));
+const MarketingLazy = lazy(() => import("./components/MarketingApp"));
+const AuthLazy = lazy(() => import("./components/AuthApp"));
+const FormLazy = lazy(() => import("./components/FormApp"));
 const SearchLazy = lazy(() => import('./components/SearchApp'));
 
 const generateClassName = createGenerateClassName({
-  productionPrefix: 'co',
+  productionPrefix: "co",
 });
 
 export default () => {
@@ -32,7 +33,8 @@ export default () => {
               <Route path="/auth">
                 <AuthLazy onSignIn={() => setIsSignedIn(true)} />
               </Route>
-              <Route exact path="/search" component={SearchLazy} />
+              <Route path="/form" component={FormLazy} />
+              <Route path="/search" component={SearchLazy} />
               <Route path="/" component={MarketingLazy} />
             </Switch>
           </Suspense>
