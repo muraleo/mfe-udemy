@@ -27,6 +27,10 @@ const navItems = [
   {
     text: 'Link Three',
     url: '/link-three'
+  },
+  {
+    text: 'search',
+    url: '/search'
   }
 ];
 
