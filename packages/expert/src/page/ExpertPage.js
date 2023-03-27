@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
+import { Paper } from '@material-ui/core';
 import { Bar, Line } from 'react-chartjs-2';
 import Chart from 'chart.js/auto';
 import { MockData } from '../__mock__/mockdata';
@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     justifyContent: 'center',
   },
-  title: {
+  chartTitle: {
     padding: theme.spacing(2),
     textAlign: 'center',
   },
@@ -48,7 +48,9 @@ export const ExpertPage = () => {
     datasets: [
       {
         label: 'Experts Gained',
-        data: MockData.map((data) => data.userGain),
+        data: MockData.map((data) => data.gainedUsers),
+        borderColor: 'black',
+        borderWidth: 1,
         backgroundColor: [
           '#beebd4',
           '#a2e6e8',
@@ -56,8 +58,6 @@ export const ExpertPage = () => {
           '#ebeda4',
           '#4b76db',
         ],
-        borderColor: 'black',
-        borderWidth: 1,
         options: {
           responsive: true,
           maintainAspectRatio: false,
@@ -71,11 +71,11 @@ export const ExpertPage = () => {
       <MainCover title="Welcome to the Expert Page!" />
       <div className={classes.subContainer}>
         <Paper className={classes.barPaper} elevation={3}>
-          <div className={classes.title}>Experts Gained Bar Graph</div>
+          <div className={classes.chartTitle}>Experts Gained Bar Graph</div>
           <Bar data={data} />
         </Paper>
         <Paper className={classes.linePaper} elevation={3}>
-          <div className={classes.title}>Experts Gained Line Graph</div>
+          <div className={classes.chartTitle}>Experts Gained Line Graph</div>
           <Line data={data} />
         </Paper>
         <ImageCard

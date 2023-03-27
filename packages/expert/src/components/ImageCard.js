@@ -1,9 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-import CardMedia from '@material-ui/core/CardMedia';
-import Hidden from '@material-ui/core/Hidden';
-import CardContent from '@material-ui/core/CardContent';
+import { Card, CardContent, CardMedia } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   card: {
@@ -30,14 +27,12 @@ export const ImageCard = ({ title, description }) => {
           <div>{description}</div>
         </CardContent>
       </div>
-      <Hidden xsDown>
-        <CardMedia
-          className={classes.cardMedia}
-          image={
-            'https://images.pexels.com/photos/3184287/pexels-photo-3184287.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-          }
-        />
-      </Hidden>
+      <CardMedia
+        className={classes.cardMedia}
+        image={
+          'https://images.pexels.com/photos/3184287/pexels-photo-3184287.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+        }
+      />
     </Card>
   );
 };
